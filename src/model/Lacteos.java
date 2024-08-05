@@ -19,8 +19,7 @@ private double litros;
         
     }
 
-    public Lacteos(int id_lacteos, int fecha_de_vencimiento, String sabor_leche, String marca, double litros, int id, String nombre, String descripcion, int stock, int precio) {
-        super(id, nombre, descripcion, stock, precio);
+    public Lacteos(int id_lacteos, int fecha_de_vencimiento, String sabor_leche, String marca, double litros) {
         this.id_lacteos = id_lacteos;
         this.fecha_de_vencimiento = fecha_de_vencimiento;
         this.sabor_leche = sabor_leche;
@@ -28,8 +27,14 @@ private double litros;
         this.litros = litros;
     }
 
-   
- 
+    public Lacteos(int id_lacteos, int fecha_de_vencimiento, String sabor_leche, String marca, double litros, int id, String nombre, String descripcion, int stock, int precio, String sellos) {
+        super(id, nombre, descripcion, stock, precio, sellos);
+        this.id_lacteos = id_lacteos;
+        this.fecha_de_vencimiento = fecha_de_vencimiento;
+        this.sabor_leche = sabor_leche;
+        this.marca = marca;
+        this.litros = litros;
+    }
 
     public int getId_lacteos() {
         return id_lacteos;
@@ -71,6 +76,7 @@ private double litros;
         this.litros = litros;
     }
 
+    
 
     
     

@@ -17,16 +17,17 @@ public class Producto {
     private String descripcion; 
     private int stock ; 
     private int precio ; 
-
+    private String sellos ; 
     public Producto() {
     }
 
-    public Producto(int id, String nombre, String descripcion, int stock, int precio) {
+    public Producto(int id, String nombre, String descripcion, int stock, int precio,String sellos) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.stock = stock;
         this.precio = precio;
+        this.sellos = sellos;
     }
 
     public int getId() {

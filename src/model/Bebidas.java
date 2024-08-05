@@ -18,8 +18,7 @@ private double litros;
     public Bebidas() {
     }
 
-    public Bebidas(int id_bebidas, int fecha_de_vencimiento, String sabor_bebida, String marca, double litros, int id, String nombre, String descripcion, int stock, int precio) {
-        super(id, nombre, descripcion, stock, precio);
+    public Bebidas(int id_bebidas, int fecha_de_vencimiento, String sabor_bebida, String marca, double litros) {
         this.id_bebidas = id_bebidas;
         this.fecha_de_vencimiento = fecha_de_vencimiento;
         this.sabor_bebida = sabor_bebida;
@@ -27,9 +26,14 @@ private double litros;
         this.litros = litros;
     }
 
-    
-
-  
+    public Bebidas(int id_bebidas, int fecha_de_vencimiento, String sabor_bebida, String marca, double litros, int id, String nombre, String descripcion, int stock, int precio, String sellos) {
+        super(id, nombre, descripcion, stock, precio, sellos);
+        this.id_bebidas = id_bebidas;
+        this.fecha_de_vencimiento = fecha_de_vencimiento;
+        this.sabor_bebida = sabor_bebida;
+        this.marca = marca;
+        this.litros = litros;
+    }
 
     public int getId_bebidas() {
         return id_bebidas;
@@ -71,6 +75,7 @@ private double litros;
         this.litros = litros;
     }
 
+  
 
    
     
