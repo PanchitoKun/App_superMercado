@@ -14,7 +14,10 @@ public class Cereales extends Producto{
     private int fecha_de_vencimiento; 
     private String sabor_cereales; 
     private int kg_cerales; 
-    private String sellos ;
+ private String marca ; 
+    
+    
+    
     
     
 }
