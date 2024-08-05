@@ -7,10 +7,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package app;
+import model.*;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import model.*; 
-import java.util.List; 
-import java.util.ArrayList; 
 
 /**
  *
@@ -36,20 +36,56 @@ public class VISTA extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        btn_ingresar = new javax.swing.JButton();
-        cbo_Que_producto_es = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txta_mostrar = new javax.swing.JTextArea();
         btn_visualizar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btn_ingresar = new javax.swing.JButton();
+        cbo_Que_producto_es = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
+
+        txta_mostrar.setColumns(20);
+        txta_mostrar.setRows(5);
+        jScrollPane1.setViewportView(txta_mostrar);
+
+        btn_visualizar.setText("Visualizar");
+        btn_visualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_visualizarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_visualizar)
+                .addGap(47, 47, 47))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_visualizar)
+                .addContainerGap(376, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("MOSTRAR", jPanel2);
 
         btn_ingresar.setText("INGRESAR");
         btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,42 +132,6 @@ public class VISTA extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("INGRESAR", jPanel1);
-
-        txta_mostrar.setColumns(20);
-        txta_mostrar.setRows(5);
-        jScrollPane1.setViewportView(txta_mostrar);
-
-        btn_visualizar.setText("Visualizar");
-        btn_visualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_visualizarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_visualizar)
-                .addGap(47, 47, 47))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_visualizar)
-                .addContainerGap(376, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("MOSTRAR", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,7 +185,13 @@ JOptionPane.showMessageDialog(this, "estas en lacteos ");
         ovistaBebidas.setVisible(true);
         this.dispose();
         }
-       
+        if (cbo_Que_producto_es.getSelectedIndex()==3) {
+            JOptionPane.showMessageDialog(this, "estas dentro de Cereales");
+            Vista_cereales ovistaCereales = new Vista_cereales; 
+            ovistaCereales.setVisible(true);
+            this.dispose();
+            
+        }
 
 
         

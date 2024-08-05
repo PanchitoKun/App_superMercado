@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package app;
+import model.*; 
+
+/*import javax.swing.JOptionPane;
+import model.*; 
+import java.util.List; 
+import java.util.ArrayList;*/
 
 /**
  *

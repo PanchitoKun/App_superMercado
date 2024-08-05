@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package app;
+import javax.swing.JOptionPane;
+import model.*; 
+import java.util.List;      
+import java.util.ArrayList;
 
 /**
  *
@@ -354,6 +358,7 @@ public class Vista_Lactios extends javax.swing.JFrame {
             o_Producto.setDescripcion(txt_descripcion.getText());
             o_Producto.setStock(Integer.parseInt(txt_stook.getText()));
             o_Producto.setPrecio(Integer.parseInt(txt_precio.getText()));
+            
 
             lista_producto.add(o_Producto);
 

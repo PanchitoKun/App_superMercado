@@ -69,7 +69,16 @@ public class Producto {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
+
+    public String getSellos() {
+        return sellos;
+    }
+
+    public void setSellos(String sellos) {
+        this.sellos = sellos;
+    }
+
+  
     
     
 }

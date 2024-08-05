@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package app;
+import model.*;
+import java.util.List;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -26,21 +31,100 @@ public class Vista_cereales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btn_ingresar = new javax.swing.JButton();
+        cbo_Que_producto_es = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn_ingresar.setText("INGRESAR");
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
+            }
+        });
+
+        cbo_Que_producto_es.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Seleccionar--", ")Lactios ", "2) Bebidas", "3)Cereales", "4)Enlatados", "5)Golocinas", "6)Carnes", "7)Vegetales", "8)Frutas", "9)Panes", " " }));
+        cbo_Que_producto_es.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbo_Que_producto_esActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("¿Que tipo de producto es? ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbo_Que_producto_es, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(btn_ingresar)))
+                .addContainerGap(476, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(cbo_Que_producto_es, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(btn_ingresar)
+                .addContainerGap(453, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        if ( cbo_Que_producto_es.getSelectedIndex()== 0) {
+            JOptionPane.showMessageDialog(this, "no puedes colocar eso , por favor ingresar otro ");
+        }
+        if (cbo_Que_producto_es.getSelectedIndex() == 1) {
+            JOptionPane.showMessageDialog(this, "estas en lacteos ");
+            Vista_Lactios ovistaLacteos = new Vista_Lactios();
+            ovistaLacteos.setVisible(true);
+            this.dispose();
+        }
+        if (cbo_Que_producto_es.getSelectedIndex()==2) {
+            JOptionPane.showMessageDialog(this, "estas dentro de la bebidas ");
+            Vista_Bebidas ovistaBebidas = new Vista_Bebidas();
+            ovistaBebidas.setVisible(true);
+            this.dispose();
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void cbo_Que_producto_esActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_Que_producto_esActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbo_Que_producto_esActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +162,9 @@ public class Vista_cereales extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_ingresar;
+    private javax.swing.JComboBox<String> cbo_Que_producto_es;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
